@@ -18,7 +18,7 @@ import keras
 import numpy as np
 from datetime import datetime
 # import pytz
-import torch
+# import torch
 # from matplotlib import pyplot as plt
 import numpy as np
 # import cv2
@@ -27,7 +27,6 @@ import os
 app = Flask(__name__)
 
 model = keras.models.load_model("HAM10000_100epochs.h5")
-# model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best.pt', force_reload=True)
 classes = ['Actinic keratoses', 'Basal cell carcinoma', 
                'Benign keratosis-like lesions', 'Dermatofibroma', 'Melanoma', 
                'Melanocytic nevi', 'Vascular lesions']
@@ -73,4 +72,4 @@ def predict_api():
 
 
 if __name__ == "__main__":
-    app.run(port=int(os.environ.get("PORT", 8080)),host='0.0.0.0',debug=True)
+    app.run(debug=True)
