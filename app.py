@@ -32,8 +32,8 @@ def index():
     return "asw"
 
 #Add Post method to the decorator to allow for form submission. 
-# @app.route('/', methods=['GET','POST'])
-model = keras.models.load_model("model/HAM10000_100epochs.h5")
+# @app.route('/', methods=['POST'])
+model = keras.models.load_model("HAM10000_100epochs.h5")
 # model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best.pt', force_reload=True)
 classes = ['Actinic keratoses', 'Basal cell carcinoma', 
                'Benign keratosis-like lesions', 'Dermatofibroma', 'Melanoma', 
