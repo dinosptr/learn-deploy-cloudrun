@@ -10,7 +10,7 @@ Flask then builds upon this foundation to provide a complete web framework.
 
 from flask import Flask, render_template, request, redirect, flash
 from PIL import Image
-# import os
+import os
 import tensorflow as tf
 import io
 import json
@@ -72,4 +72,4 @@ def predict_api():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=int(os.environ.get("PORT", 8080)),host='0.0.0.0')
