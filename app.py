@@ -26,18 +26,16 @@ import numpy as np
 import os 
 app = Flask(__name__)
 
-
-# @app.route('/')
-# def index():
-#     return "asw"
-
-#Add Post method to the decorator to allow for form submission. 
-# @app.route('/', methods=['POST'])
 model = keras.models.load_model("HAM10000_100epochs.h5")
 # model = torch.hub.load('ultralytics/yolov5', 'custom', path='model/best.pt', force_reload=True)
 classes = ['Actinic keratoses', 'Basal cell carcinoma', 
                'Benign keratosis-like lesions', 'Dermatofibroma', 'Melanoma', 
                'Melanocytic nevi', 'Vascular lesions']
+
+@app.route('/')
+def index():
+    return "asw"
+
 @app.route("/predict", methods=["POST"])
 def predict_api():
     if 'file' not in request.files:
