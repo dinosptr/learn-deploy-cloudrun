@@ -27,9 +27,9 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-    return "asw"
+# @app.route('/')
+# def index():
+#     return "asw"
 
 #Add Post method to the decorator to allow for form submission. 
 # @app.route('/', methods=['POST'])
